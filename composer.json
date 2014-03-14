@@ -1,0 +1,47 @@
+{
+  "name":        "ingenerator/kohana-errors",
+  "description": "Basic improved kohana custom error pages for CLI and web use",
+  "keywords":    ["kohana", "errors" ],
+  "homepage":    "https://github.com/ingenerator/kohana-errors",
+  "type":        "library",
+  "license":     "BSD",
+  "authors":     [
+    {
+      "name":     "Andrew Coulton",
+      "email":    "andrew@ingenerator.com",
+      "homepage": "http://www.ingenerator.com"
+    }
+  ],
+
+  "require": {
+    "php":           ">=5.3.3",
+    "kohana/core":   "3.3.*"
+  },
+
+  "require-dev": {
+  },
+
+  "suggest": {
+  },
+
+  "support": {
+    "issues": "https://github.com/ingenerator/kohana-errors",
+    "source": "https://github.com/ingenerator/kohana-errors"
+  },
+
+  "autoload": {
+  },
+
+  "bin": [],
+
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    }
+  },
+
+  "config": {
+    "bin-dir":           "bin",
+    "preferred-install": "dist"
+  }
+}
