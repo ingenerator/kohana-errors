@@ -48,7 +48,15 @@ foreach (Debug::trace($trace) as $i => $step)
 		// FATAL have already converted args to strings
 		$arg = ($code === 'Fatal Error') ? $arg : html_entity_decode(strip_tags(Debug::dump($arg)), ENT_QUOTES, 'UTF-8');
 		$arg = explode(\PHP_EOL, wordwrap($arg, $wrap_at, \PHP_EOL, TRUE));
+
+		// Don't allow ridiculously long output if the method took a lot of args or a big array
+		if (count($arg) > 20) {
+			$truncated_count = count($arg) - 20;
+			$arg = array_slice($arg, 0, 20);
+			$arg[] = '<<<--- '.$truncated_count.' lines truncated --->>>';
+		}
 		$arg = implode(\PHP_EOL.$indent, $arg);
+
 		echo $arg.\PHP_EOL;
 	}
 	if ($level >= 5)
