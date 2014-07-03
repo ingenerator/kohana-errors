@@ -6,7 +6,11 @@
  * Could be significantly cleaned up by implementing internal replacements for the \Debug:: methods that do not output
  * HTML.
  */
-$cols = exec('tput cols');
+$cols = exec('tput cols', $status, $result);
+if ($result !== 0) {
+	// Probably running under cron or otherwise detached from a terminal
+	$cols = 100;
+}
 
 // Render the exception message in a header block
 $main_message = $class.' ['.$code.']: '.$message;
