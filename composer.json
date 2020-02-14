@@ -44,5 +44,6 @@
   "config": {
     "bin-dir":           "bin",
     "preferred-install": "dist"
-  }
+  },
+  "abandoned": "ingenerator/kohana-core"
 }
